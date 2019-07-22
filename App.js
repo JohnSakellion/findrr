@@ -6,7 +6,70 @@
  * @flow
  */
 
-import React, {Fragment} from 'react';
+
+import React, { Component } from 'react';
+import { Text, View, AppRegistry, Image, StyleSheet } from 'react-native';
+import { Button, ThemeProvider, Avatar } from 'react-native-elements';
+import LinearGradient from 'react-native-linear-gradient';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+let theme = {
+  Button: {
+    titleStyle: {
+      color: 'white',
+    },
+    buttonStyle: {
+      backgroundColor: '#00FFFF',
+      borderRadius: 25,
+      marginTop: 5,
+      marginBottom: 5,
+    }
+  },
+};
+
+const styles = StyleSheet.create({
+  bigBlue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  red: {
+    color: 'red',
+  },
+});
+
+export default class HelloWorldApp extends Component {
+
+  render() {
+    let pic = {
+      uri: 'https://img.purch.com/rc/300x200/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA4OC85MTEvb3JpZ2luYWwvZ29sZGVuLXJldHJpZXZlci1wdXBweS5qcGVn'
+    };
+    return (
+      <ThemeProvider theme={theme}>
+        <Text>FINDRR</Text>
+        <Avatar 
+          rounded
+          source={pic} 
+        />
+        <Text>Meet new friends today!</Text>
+        <Button
+          title="Login with Facebook"
+          accessibilityLabel="Learn more about this purple button"
+        />
+        <Button
+          type="outline"
+          title="Learn More"
+          accessibilityLabel="Learn more about this purple button"
+        />
+        <Text>Copyright © 2019 Chloë Haven. All rights reserved.</Text>
+      </ThemeProvider>
+    );
+  }
+}
+
+
+/*
+import React, {Fragment, Component} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -15,6 +78,7 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+
 
 import {
   Header,
@@ -25,6 +89,8 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 const App = () => {
+}
+
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
@@ -111,4 +177,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default App;*/
